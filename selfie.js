@@ -6,26 +6,37 @@ let x = 200; // x-axis
 let y = 200; // y-axis
 let w = 200; // width
 let h = 200; // height
-let s = 1.0; // scale
+let s = 1.0; // scale for the eyes
+let sc = 1.0; //scale for the whole image
 
 background(colorWhite);
 
 push();
-translate(10, 10);
+translate(200, 10);
 angleMode(DEGREES);
-// rotate(20);
+rotate(20);
+scale(sc);
 strokeWeight(1);
+
+//back hair
+push();
+fill(50, 50, 50);
+beginShape();
+vertex(x - 40, y - 50);
+bezierVertex(x - 140, y + 80, x - 180, y + 150, x + 130, y + 300);
+endShape();
+pop();
 
 //head
 fill(226, 171, 83);
-ellipse(x + 50, y + 50, w + 100 * s);
+ellipse(x + 50, y + 50, w + 100);
 
 //top hair
 push();
 fill(50, 50, 50);
 beginShape();
-vertex(113, 190);
-bezierVertex(200, 8, 355, 95, 390, 190);
+vertex(x - 89, y - 10);
+bezierVertex(x, y - 192, x + 155, y - 105, x + 190, y - 10);
 endShape();
 pop();
 
@@ -74,10 +85,10 @@ arc(x + 50, y + 100, w - 35, h - 100, 50, 180, 180);
 pop();
 
 //hat
-// push();
-// fill(80, 80, 80);
-// rect(x - 100, y - 120, w + 100, h - 110, 20);
-// pop();
+push();
+fill(80, 80, 80);
+rect(x - 100, y - 120, w + 100, h - 110, 20);
+pop();
 
 //eyebrows
 push();
@@ -85,13 +96,13 @@ noFill();
 strokeWeight(4);
 stroke(colorWhite);
 beginShape();
-vertex(160, 170);
-bezierVertex(200, 90, 230, 160, 240, 165);
+vertex(x - 40, y - 30);
+bezierVertex(x, y - 110, x + 30, y - 40, x + 40, y - 35);
 endShape();
 
 beginShape();
-vertex(350, 170);
-bezierVertex(300, 170, 270, 160, 270, 150);
+vertex(x + 150, y - 30);
+bezierVertex(x + 100, y - 30, x + 70, y - 40, x + 70, y - 50);
 endShape();
 pop();
 

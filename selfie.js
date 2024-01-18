@@ -20,6 +20,15 @@ strokeWeight(1);
 fill(226, 171, 83);
 ellipse(x + 50, y + 50, w + 100 * s);
 
+//top hair
+push();
+fill(50, 50, 50);
+beginShape();
+vertex(113, 190);
+bezierVertex(200, 8, 355, 95, 390, 190);
+endShape();
+pop();
+
 //eyes
 push();
 fill(colorWhite);
@@ -38,6 +47,7 @@ pop();
 push();
 strokeWeight(6);
 noFill();
+stroke(50, 90, 20);
 strokeWeight(2.5);
 arc(x + 50, y + 14, w - 170, h - 170, 180, 1, 180);
 arc(x - 70, y + 14, w - 150, h - 190, 180, 1, 180);
@@ -63,12 +73,26 @@ noFill();
 arc(x + 50, y + 100, w - 35, h - 100, 50, 180, 180);
 pop();
 
-//hat + eyebrows
+//hat
+// push();
+// fill(80, 80, 80);
+// rect(x - 100, y - 120, w + 100, h - 110, 20);
+// pop();
+
+//eyebrows
 push();
-fill(80, 80, 80);
-rect(x - 100, y - 120, w + 100, h - 110, 20);
 noFill();
-arc(x + 55, y - 70, w + 50, h - 100, 0, 180, 180);
+strokeWeight(4);
+stroke(colorWhite);
+beginShape();
+vertex(160, 170);
+bezierVertex(200, 90, 230, 160, 240, 165);
+endShape();
+
+beginShape();
+vertex(350, 170);
+bezierVertex(300, 170, 270, 160, 270, 150);
+endShape();
 pop();
 
 //end of the first push(); pop() of the file;
